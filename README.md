@@ -50,11 +50,11 @@ Two options are available when installing the LW Agent in AWS Fargate. Both are 
 
 Two major options to install the LW Agent in AWS Fargate are available. The *preferred* method is to backe the LW Agent directly in the Docker Image. We encourgae the use of multi stage builds but a verion sans multi-stage builds is also documented below:
 
-***TO VIEW THE INSTALLATION STEPS, NAVIGATE TO THE CORRESPOINDING [EXAMPLE `README.md`](/examples)***
+***TO VIEW THE INSTALLATION STEPS, NAVIGATE TO THE CORRESPOINDING CONFIGURATION FROM BELOW***
 
-- [*Recommended* Installation: Baked in the Docker Image WITH multi-build](examples/baked-multistageRECOMMENDED)
-- [Recommneded Installation: Baked in the Docker Image SANS multi-build](examples/baked-github-build)
-- [Alternative Installation: Use a Sidecar](examples/sidecar)
+- [*Recommended* Baked in the Docker Image WITH multi-stage builds](examples/baked-multistageRECOMMENDED/README.md)
+- [Baked in the Docker Image SANS multi-build](examples/baked-github-build/README.md)
+- [Using a Sidecar](examples/sidecar/README.md)
 
 ## Got Feedback?
 

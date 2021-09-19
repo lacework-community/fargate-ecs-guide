@@ -13,7 +13,7 @@ With this approach, the original application images stay intact so we instead mo
 
 ### Step 1: Upload image(s) to AWS ECR
 
-#### Step 1A: Upload Main Application
+#### Step 1A: [Upload Main Application](push-main.sh)
 
 [Dockerfile](main.dockerfile)
 
@@ -37,7 +37,7 @@ With this approach, the original application images stay intact so we instead mo
   curl -s  https://stream.wikimedia.org/v2/stream/recentchange |   grep data |  sed 's/^data: //g' |  jq -rc 'with_entries(if .key == "$schema" then .key = "schema" else . end)'
   ```
 
-[Build & Push](build-main.sh)
+[Build](build-main.sh) & Push
 
 ```bash
 # Set variables for ECR
@@ -61,7 +61,7 @@ This steps allows you to have Laceworks official sidecar image in your environme
 FROM lacework/datacollector:latest-sidecar
 ```
 
-[Build & Push](build-sidecar.sh)
+[Build](build-sidecar.sh) & [Push](build-sidecar.sh)
 
 ```bash
 # Set variables for ECR
@@ -77,21 +77,20 @@ aws ecr get-login-password --region ${AWS_ECR_REGION} | sudo docker login --user
 docker push "${AWS_ECR_URI}/${AWS_ECR_NAME}:latest-sidecar"
 ```
 
-### Step 2: Create & Register the TaskDefinition
+### Step 2: Create & Register the `TaskDefinition`
 
-In this step, we’ll be adding details from our sidecar and main application containers.  Though we need to provide a full [TaskDefinition](#taskdefinition-sidecar.json), below are the extracted, relevant configurations. Please ensure anything in **bold** matches on your end.
+In this step, we’ll be adding details from our sidecar and main application containers.  Though we need to provide a full [TaskDefinition](taskDefinition.json), below are the extracted, relevant configurations. Please ensure anything in **bold** matches on your end.
 
 See our [docs](https://support.lacework.com/hc/en-us/articles/360055567574#sidecar-based-deployment) for screenshots.
 
-Register the task definition
+### Step 2a: Register the task definition
 
-  ```bash
-  # Register the task definition
-  aws ecs register-task-definition --cli-input-json file://taskDefinition-sidecar.json   
+```bash
+# Register the task definition
+aws ecs register-task-definition --cli-input-json file://taskDefinition-sidecar.json   
 ```
 
-[Sidecar Container Definition](taskDefinition.json) (partially shown below)
-
+[Sidecar section](taskDefinition.json) (partially shown below)
   ```json
   {
     "name": "dianademo-sidecar",
@@ -111,51 +110,50 @@ Register the task definition
   ```
 
 
-[Main App Container Definition](taskDefinition.json) (partially shown below)
-
-```json
-{
-  "name": "dianademo-mainapp",
-  "image": "000000000000.dkr.ecr.us-east-2.amazonaws.com/dianademo:latest-main",
-  "cpu": 512,
-  "memory": 1024,
-  "essential": true,
-  "command": [  
-    "sh",  
-    "-c",  
-    "/var/lib/lacework-backup/lacework-sidecar.sh && /docker-entrypoint.sh"  
-  ],  
-  "environment": [  
+[Main App section](taskDefinition.json) (partially shown below)
+  ```json
+  {
+    "name": "dianademo-mainapp",
+    "image": "000000000000.dkr.ecr.us-east-2.amazonaws.com/dianademo:latest-main",
+    "cpu": 512,
+    "memory": 1024,
+    "essential": true,
+    "command": [  
+      "sh",  
+      "-c",  
+      "/var/lib/lacework-backup/lacework-sidecar.sh && /docker-entrypoint.sh"  
+    ],  
+    "environment": [  
+        {  
+            "name": "LaceworkAccessToken",  
+            "value": "ae83fc1d3f79f8f84b3512688b5b6b98f33f6688fa4c67931afae9a6"
+        }
+    ],  
+    "volumesFrom": [  
       {  
-          "name": "LaceworkAccessToken",  
-          "value": "ae83fc1d3f79f8f84b3512688b5b6b98f33f6688fa4c67931afae9a6"
-      }
-  ],  
-  "volumesFrom": [  
-    {  
-        "sourceContainer": "dianademo-sidecar",  
-        "readOnly": true  
-    }  
-  ],
-  "dockerLabels": {  
-    "Monitoring": "Lacework"  
-  },  
-  "dependsOn": [  
-      {  
-          "containerName": "dianademo-sidecar",  
-          "condition": "SUCCESS"  
+          "sourceContainer": "dianademo-sidecar",  
+          "readOnly": true  
       }  
-  ],    
-  "logConfiguration": {
-    "logDriver": "awslogs",
-    "options": {
-      "awslogs-group": "/ecs/dianademo-sidecar",  
-      "awslogs-region": "us-east-2",  
-      "awslogs-stream-prefix": "main" 
+    ],
+    "dockerLabels": {  
+      "Monitoring": "Lacework"  
+    },  
+    "dependsOn": [  
+        {  
+            "containerName": "dianademo-sidecar",  
+            "condition": "SUCCESS"  
+        }  
+    ],    
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/dianademo-sidecar",  
+        "awslogs-region": "us-east-2",  
+        "awslogs-stream-prefix": "main" 
+      }
     }
   }
-}
-```
+  ```
 
 ### Step 3: Run the TaskDefinition
 

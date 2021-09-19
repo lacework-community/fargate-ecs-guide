@@ -3,9 +3,9 @@
 This option downloads our latest LW Agent from the [GitHub Release repository](https://github.com/lacework/lacework-agent-releases). The installation script will determine the underlying OS and install the appropriate package. 
 
 Notes:
-* The <code>RUN</code></strong> command uses [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/) to securely pass the LW Agent Token as <code>LW_AGENT_ACCESS_TOKEN</code>. This is not necessary but <strong>recommended</strong>. For an example <em>sans</em> the BuildKit see the [/sans-buildki-example](/examples/baked-github-build/sans-buildkit-example/Dockerfile).
+* The <code>RUN</code></strong> command uses [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/) to securely pass the LW Agent Token as <code>LW_AGENT_ACCESS_TOKEN</code>. This is not necessary but <strong>recommended</strong>. For an example <em>sans</em> the BuildKit see the [/sans-buildki-example](/examples/baked-github-build/sans-buildkit-example/README.md).
 * <strong>Additional Requirement: </strong>You must be able to install `curl`, `openssl`, and `ca-certificates`, if they are not already included in the base image.  The example provided in this document is Ubuntu.  You will need to first determine the Linux distro used by your base image, identify the package manager used by that distro, and install the needed dependencies as part of your <code>Dockerfile</code>.
-* The below command may be appended to an existing RUN command via &&’s. Alternatively, it may be added as a new RUN command.
+* The below command may be appended to an existing `RUN` command via `&&`’s. Alternatively, it may be added as a new `RUN` command.
 
 ## Instalation Steps
 
@@ -62,7 +62,7 @@ curl -s  https://stream.wikimedia.org/v2/stream/recentchange |   grep data |  se
 ```
 
 
-### Step 2: Build & Push 
+### Step 2: [Build](build-baked.sh)  & [Push](push-baked.sh)
 
 ```bash
 # Set variables for ECR

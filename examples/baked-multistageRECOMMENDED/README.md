@@ -1,18 +1,14 @@
 
 # Preferred Installation
-## Baked in the Docker Image WITH multi-stage builds
+## "Baked" the LW Agent in the Docker Image using multi-stage builds
 
 There are a few options on how to bake our agent. While you could technically download the agent at run time, this would typically result in a longer startup time as opposed to having the agent installed and preconfigured in the image for quicker boot times.
 
-
 **We recommend directly installing the LW Agent in your existing Docker Image via multi stage builds as shown below.**
-
-
-Note: Anything in **bold** is a placeholder.
 
 ## Install Steps
 
-### Step 1: Add the Agent to your `Dockerfile`
+### Step 1: Add the Agent to your existing `Dockerfile`
 
 Firstly, we modify your existing `Dockerfile` in order to add the LW Agent. This is achieved by:
 
@@ -66,11 +62,11 @@ Below is a full example of a _very_ simple `Dockerfile` along with its entrypoin
 ```
 
 Notes: 
-* The <code>RUN</code></strong> command uses [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/) to securely pass the LW Agent Token as <code>LW_AGENT_ACCESS_TOKEN</code>. This is <em>not</em> necessary but <strong>recommended</strong>. For an example <em>sans</em> the BuildKit see the [Sans BuildKit Dockerfile](sans-buildkit-example/Dockerfile)) AND the [Sans BuildKit Build Script](sans-buildkit-example/build.sh).
+* The <code>RUN</code></strong> command uses [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/) to securely pass the LW Agent Token as <code>LW_AGENT_ACCESS_TOKEN</code>. This is <em>not</em> necessary but <strong>recommended</strong>. For an example <em>sans</em> the BuildKit see the [Sans BuildKit folder](sans-buildkit-example/README.md).
 * It’s also possible to install the LW Agent by fetching and installing the binaries from our official github repository. Steps for this approach are found in the [GitHub Build Example](../baked-github-build/README.md)
 * Optionally, some customers choose to upload the `lacework/datacollector:latest` to their ECR. 
 
-### Step 2: Build & Push
+### Step 2: [Build](build-multi.sh) & [Push](push-multi.sh)
 
 Now that our image has been modified, it’s time to upload the changes to ECR by:
 
