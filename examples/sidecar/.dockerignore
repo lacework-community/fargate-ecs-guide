@@ -1,0 +1,5 @@
+build*.sh
+push*.sh
+token*
+vars*
+run*.sh

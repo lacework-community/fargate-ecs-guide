@@ -1,7 +1,7 @@
 
 # LW Agent + AWS Fargate Guide <!-- omit in toc -->
 
-**August 2021**
+**September 2021**
 
 - [Overview](#overview)
 - [Best Practices](#best-practices)
