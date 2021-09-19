@@ -6,7 +6,9 @@ There are a few options on how to bake our agent. While you could technically do
 
 **We recommend directly installing the LW Agent in your existing Docker Image via multi stage builds as shown below.**
 
-## Install Steps
+## Installation Steps 
+
+### Step 0: Review [Best Practices](../../README.md#best-practices) & [General Requirements](../../README.md#requirements)
 
 ### Step 1: Add the Agent to your existing `Dockerfile`
 

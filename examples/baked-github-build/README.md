@@ -7,7 +7,10 @@ Notes:
 * <strong>Additional Requirement: </strong>You must be able to install `curl`, `openssl`, and `ca-certificates`, if they are not already included in the base image.  The example provided in this document is Ubuntu.  You will need to first determine the Linux distro used by your base image, identify the package manager used by that distro, and install the needed dependencies as part of your <code>Dockerfile</code>.
 * The below command may be appended to an existing `RUN` command via `&&`’s. Alternatively, it may be added as a new `RUN` command.
 
-## Instalation Steps
+## Installation Steps 
+
+### Step 0: Review [Best Practices](../../README.md#best-practices) & [General Requirements](../../README.md#requirements)
+
 
 ### Step 1: Copy One-Liner & edit entrypoint script
 

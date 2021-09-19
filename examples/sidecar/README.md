@@ -11,6 +11,11 @@ With this approach, the original application images stay intact so we instead mo
 * Access to the underlying `Dockerfile`(s) as overriding the entrypoint/cmd is dependent on such.
 * The application container must have the following packages installed: `openssl`, `ca-certificates`, and `curl/wget`.
 
+
+## Installation Steps 
+
+### Step 0: Review [Best Practices](../../README.md#best-practices) & [General Requirements](../../README.md#requirements)
+
 ### Step 1: Upload image(s) to AWS ECR
 
 #### Step 1A: [Upload Main Application](push-main.sh)
