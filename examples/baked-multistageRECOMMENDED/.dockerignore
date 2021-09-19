@@ -3,3 +3,5 @@ push*.sh
 token*
 vars*
 run*.sh
+*.json
+sans*/*
