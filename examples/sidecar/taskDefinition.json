@@ -1,0 +1,120 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-sidecar:1",
+        "containerDefinitions": [
+            {
+                "name": "dianademo-sidecar",
+                "image": "000000000000.dkr.ecr.us-east-2.amazonaws.com/dianademo:latest-sidecar",
+                "cpu": 0,
+                "portMappings": [],
+                "essential": false,
+                "environment": [],
+                "mountPoints": [],
+                "volumesFrom": [],
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "/ecs/dianademo-sidecar",
+                        "awslogs-region": "us-east-2",
+                        "awslogs-stream-prefix": "ecs"
+                    }
+                }
+            },
+            {
+                "name": "dianademo-main",
+                "image": "000000000000.dkr.ecr.us-east-2.amazonaws.com/dianademo:latest-main",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 80,
+                        "hostPort": 80,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "entryPoint": [
+                    "sh",
+                    "-c"
+                ],
+                "command": [
+                    "/var/lib/lacework-backup/lacework-sidecar.sh && /docker-entrypoint.sh"
+                ],
+                "environment": [
+                    {
+                        "name": "LaceworkAccessToken",
+                        "value": "123abc123abc"
+                    }
+                ],
+                "mountPoints": [],
+                "volumesFrom": [
+                    {
+                        "sourceContainer": "dianademo-sidecar",
+                        "readOnly": true
+                    }
+                ],
+                "dependsOn": [
+                    {
+                        "containerName": "dianademo-sidecar",
+                        "condition": "SUCCESS"
+                    }
+                ],
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "/ecs/dianademo-sidecar",
+                        "awslogs-region": "us-east-2",
+                        "awslogs-stream-prefix": "ecs"
+                    }
+                }
+            }
+        ],
+        "family": "dianademo-sidecar",
+        "taskRoleArn": "arn:aws:iam::000000000000:role/ecsInstanceRole",
+        "executionRoleArn": "arn:aws:iam::000000000000:role/ecsInstanceRole",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+            },
+            {
+                "name": "ecs.capability.execution-role-awslogs"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.ecr-auth"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.task-iam-role"
+            },
+            {
+                "name": "ecs.capability.container-ordering"
+            },
+            {
+                "name": "ecs.capability.execution-role-ecr-pull"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2",
+            "FARGATE"
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "512",
+        "memory": "1024",
+        "registeredAt": "2021-08-25T06:20:08.202000-05:00",
+        "registeredBy": "arn:aws:sts::000000000000:assumed-role/lacework-cs1-admin-role/diana.esteves@lacework.net"
+    }
+}

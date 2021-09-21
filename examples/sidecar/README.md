@@ -11,7 +11,6 @@ With this approach, the original application images stay intact so we instead mo
 * Access to the underlying `Dockerfile`(s) as overriding the entrypoint/cmd is dependent on such.
 * The application container must have the following packages installed: `openssl`, `ca-certificates`, and `curl/wget`.
 
-
 ## Installation Steps 
 
 ### Step 0: Review [Best Practices](../../README.md#best-practices) & [General Requirements](../../README.md#requirements)
@@ -92,7 +91,7 @@ See our [docs](https://support.lacework.com/hc/en-us/articles/360055567574#sidec
 
 ```bash
 # Register the task definition
-aws ecs register-task-definition --cli-input-json file://taskDefinition-sidecar.json   
+aws ecs register-task-definition --cli-input-json file://taskDefinition.json   
 ```
 
 [Sidecar section](taskDefinition.json) (partially shown below)
@@ -164,3 +163,15 @@ aws ecs register-task-definition --cli-input-json file://taskDefinition-sidecar.
 
 Once the task is created we can run it or create a service around it. This can be done in the aws web console or via the cli. The service’s task will be the one we just created in the previous step. An example of a simple service is [here](service.json).
 
+
+
+## AWS Examples
+
+- [taskDefinition.json](taskDefinition.json) Obtained via:
+```bash
+aws ecs describe-task-definition --task-definition arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-sidecar:1 > ~/lw/agent/fargate/fargate-ecs-guide/examples/sidecar/taskDefinition.json
+```
+- [service.json](service.json) Obtained via:
+```bash
+aws ecs describe-services --services arn:aws:ecs:us-east-2:000000000000:service/dianademo-cluster/dianademo-sidecar --cluster dianademo-cluster  > ~/lw/agent/fargate/fargate-ecs-guide/examples/sidecar/service.json
+```

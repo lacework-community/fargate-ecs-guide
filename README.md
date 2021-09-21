@@ -33,7 +33,7 @@ Two options are available when installing the LW Agent in AWS Fargate. Both are 
 
 * Install the Agent _directly_ into your existing application Dockerfile(s):
     * Use [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds).
-    * Securely pass in the LW Agent Token when building the Docker image. This may be achieved using [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/).
+    * Securely pass in the LW Agent Token when building the Docker image. This may be achieved by putting the token in the container definition as an environment variable.
 * Allocate 512MB vCPU and 1GB RAM for the LW Agent.
 * Use one LW Agent Token per _container_ (`TaskDefinition` Service).
 

@@ -1,0 +1,577 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:us-east-2:000000000000:service/dianademo-cluster/dianademo-multi-service",
+            "serviceName": "dianademo-multi-service",
+            "clusterArn": "arn:aws:ecs:us-east-2:000000000000:cluster/dianademo-cluster",
+            "loadBalancers": [],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "taskDefinition": "arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-multi:2",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": false,
+                    "rollback": false
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/0385547909932455522",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-multi:2",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2021-09-18T14:18:46.556000-05:00",
+                    "updatedAt": "2021-09-21T16:39:56.270000-05:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0e9ee9e68b696cd87"
+                            ],
+                            "securityGroups": [
+                                "sg-0ef05399277d4814f"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/0385547909932455522 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::000000000000:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "b045a6cd-4a47-4dbf-b6f8-eeb532ddb273",
+                    "createdAt": "2021-09-21T16:39:56.273000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "e6ff9504-06aa-4fbe-90bd-2a7112b32879",
+                    "createdAt": "2021-09-21T16:39:27.229000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task c205088d451a417689410413fca7734d)."
+                },
+                {
+                    "id": "32f03e79-70f8-4e63-80b1-3002a53b0b79",
+                    "createdAt": "2021-09-21T16:24:04.814000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "866bebe1-4708-4dbc-9b46-2d8985ee2b6c",
+                    "createdAt": "2021-09-21T16:23:34.869000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 071fcbca9ef24f4192d7c3c24d078d3b)."
+                },
+                {
+                    "id": "73b9f81f-0f1c-40c4-b7ba-c99abf1074bb",
+                    "createdAt": "2021-09-21T16:08:13.055000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "2965b008-a59f-48a3-943c-9a0185d8b62a",
+                    "createdAt": "2021-09-21T16:07:44.160000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 1f68bfdac52a46d9a4633fde84d9f8c8)."
+                },
+                {
+                    "id": "f98b7d2a-bd36-43e2-81d5-95a5dbc103b6",
+                    "createdAt": "2021-09-21T15:52:21.753000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5939e29b-25bc-4dfb-ab4b-d563359be1a9",
+                    "createdAt": "2021-09-21T15:52:01.867000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 4319634766ab45b799a5bce58e01aa5c)."
+                },
+                {
+                    "id": "ef2c1374-0f6a-4c5d-bbbf-fbf5f62f64dd",
+                    "createdAt": "2021-09-21T15:36:39.836000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5fa52377-e303-4448-8cfd-17acc9690637",
+                    "createdAt": "2021-09-21T15:36:10.902000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 343906302780425cb70310d4970b1ca2)."
+                },
+                {
+                    "id": "43e1592e-24c7-4f5f-b565-df0ec0f193a0",
+                    "createdAt": "2021-09-21T15:20:37.629000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "49b16cba-ba3e-438a-9812-06bcf58de7c9",
+                    "createdAt": "2021-09-21T15:20:08.963000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task cfce9eee9fa04e058ad3f8bd0d71e48e)."
+                },
+                {
+                    "id": "204812ea-32df-44bb-a4ba-ce77d3e0ce2c",
+                    "createdAt": "2021-09-21T15:04:44.967000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "59bff356-73b5-45c4-bdd5-eafb1741af58",
+                    "createdAt": "2021-09-21T15:04:25.330000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task f651d0aba9cc411f8add802899025bef)."
+                },
+                {
+                    "id": "7547c324-0448-44fa-b3ae-6525c266db1c",
+                    "createdAt": "2021-09-21T14:48:55.138000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "168906df-e08f-4024-90f2-40d6d02cde70",
+                    "createdAt": "2021-09-21T14:48:25.807000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 69083c036af749c1aeb729cb6c45fdcf)."
+                },
+                {
+                    "id": "1f55027e-47f5-479d-817e-2f7424fecd69",
+                    "createdAt": "2021-09-21T14:33:08.970000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "baf9e767-ad90-4800-9e3f-352af58dc9ca",
+                    "createdAt": "2021-09-21T14:32:39.810000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 637bdc2d69d44a949c246ea25b09c032)."
+                },
+                {
+                    "id": "6a66fe13-3983-4bd5-9519-a6b20b672f01",
+                    "createdAt": "2021-09-21T14:17:24.078000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "cfa67ad4-9e6e-4766-bc36-54ce1a6293aa",
+                    "createdAt": "2021-09-21T14:16:55.002000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task d863fdc037f3473686bb3a8a2202cf93)."
+                },
+                {
+                    "id": "7d76369d-f980-4ad7-9520-c6d0fcb2bd46",
+                    "createdAt": "2021-09-21T14:01:28.493000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "0ce07473-41f3-4b2b-a007-8aec67aceeef",
+                    "createdAt": "2021-09-21T14:00:59.929000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 7c11d38adbce45fe896eefd3b0a9a726)."
+                },
+                {
+                    "id": "93a28d5d-f325-477b-881d-3fb98f9e1e38",
+                    "createdAt": "2021-09-21T13:45:36.951000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "501950c5-1b8e-4b00-addb-eb85beade49a",
+                    "createdAt": "2021-09-21T13:45:07.291000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 45611cb34a0f492ab32acfaee6ec4cc8)."
+                },
+                {
+                    "id": "8742692c-7c1a-4f1b-a024-1e32f0e300fe",
+                    "createdAt": "2021-09-21T13:29:45.724000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5093c39d-8ef1-4661-b12e-8d5967555de9",
+                    "createdAt": "2021-09-21T13:29:26.293000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 816c8d1b0cfd42c2a9d3a7f26ebe0ec5)."
+                },
+                {
+                    "id": "1b794ce9-d0fa-4d5b-adac-edb409d86fa1",
+                    "createdAt": "2021-09-21T13:14:10.171000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "6f752907-f9f4-487f-ba4e-f972e9196947",
+                    "createdAt": "2021-09-21T13:13:40.876000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 06c8e1457b2449c6b2bc92cd6b2378cd)."
+                },
+                {
+                    "id": "170459e6-4d32-4c48-a86d-2a96bf63aee3",
+                    "createdAt": "2021-09-21T12:58:23.622000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "6972adbf-ae9a-4722-ba09-303b5300ede0",
+                    "createdAt": "2021-09-21T12:58:04.820000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task b7b4c449888a48a6a2f6b0c668d06180)."
+                },
+                {
+                    "id": "837f3449-1796-4ea4-a163-66c138c881c2",
+                    "createdAt": "2021-09-21T12:42:45.052000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "32dd9b3c-523e-45b5-ac97-26cb3ec22020",
+                    "createdAt": "2021-09-21T12:42:16.040000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task e5e94e753c5d4a259580e405cc27611c)."
+                },
+                {
+                    "id": "cca94731-a018-4cb7-8e2d-5c63206f9ea3",
+                    "createdAt": "2021-09-21T12:26:37.208000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "9bec1e7d-3dcb-4beb-9888-ad6fd1f1a99b",
+                    "createdAt": "2021-09-21T12:26:17.089000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 061195fc6a1c435bb7a94e42226773b0)."
+                },
+                {
+                    "id": "ef2e7531-505c-40f4-b1b0-2a680ed0c5a2",
+                    "createdAt": "2021-09-21T12:11:06.390000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "e5048d62-3167-4ee8-9828-c9b74997fdf1",
+                    "createdAt": "2021-09-21T12:10:46.576000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 7ed39130b7f04bbeabfbe85d1af8c5b3)."
+                },
+                {
+                    "id": "318574e0-8321-44f4-b30e-2b403838eab5",
+                    "createdAt": "2021-09-21T11:55:25.833000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "a57f6421-24bf-4db0-aaf1-2355847b1184",
+                    "createdAt": "2021-09-21T11:54:56.209000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 9514cadb2beb425fac479787f6a6a7d7)."
+                },
+                {
+                    "id": "d0e4ef07-0a86-4281-a1da-13f32eaec330",
+                    "createdAt": "2021-09-21T11:39:27.394000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "00df6c18-9827-4fbe-b3ec-fba703ba479d",
+                    "createdAt": "2021-09-21T11:39:08.536000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task ab531e2cc7224b20ac8723038d08df7d)."
+                },
+                {
+                    "id": "ea208e3e-ea3e-4c99-b8da-b63e0a9a7a06",
+                    "createdAt": "2021-09-21T11:23:51.843000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5ab91059-a4ae-4795-8d41-7f8d4dab2086",
+                    "createdAt": "2021-09-21T11:23:31.185000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 5a8ff9ea558e4a10a95cbd8b55150777)."
+                },
+                {
+                    "id": "63c6c5fa-95bf-4be3-b2b5-cb312ccec79e",
+                    "createdAt": "2021-09-21T11:08:04.500000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "ac2eaf92-6e8c-4463-b31f-a59f7ea7f659",
+                    "createdAt": "2021-09-21T11:07:34.888000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 533f90f908ef4728a2788425fc84a883)."
+                },
+                {
+                    "id": "06ffff48-6b72-4aa4-a83c-60b198a62b99",
+                    "createdAt": "2021-09-21T10:52:09.455000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "8e2dc572-9dc1-452b-bf96-2d9a21ccc64c",
+                    "createdAt": "2021-09-21T10:51:50.120000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 9c136253a3af45999774e67a49116dad)."
+                },
+                {
+                    "id": "6779850a-aa84-4921-a29f-e11b5cfff998",
+                    "createdAt": "2021-09-21T10:36:25.636000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "8da069c6-6889-43c8-9d08-84e1ddc3b649",
+                    "createdAt": "2021-09-21T10:35:55.543000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task dbaa8155db1c4c2aa1ab97c73258bfac)."
+                },
+                {
+                    "id": "9e7adfbc-8c7b-4da7-aafe-aabd8d87c111",
+                    "createdAt": "2021-09-21T10:20:28.033000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "d43d68fc-7ba8-4fbd-acb2-4f31c92bb501",
+                    "createdAt": "2021-09-21T10:20:00.135000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 0b8bb8fc5551464394915231b68223cf)."
+                },
+                {
+                    "id": "2e16929f-4e01-4f37-9918-71ef74d1a410",
+                    "createdAt": "2021-09-21T10:04:27.407000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "0edc9c16-b9f5-46a0-bf07-e3dcf8d89195",
+                    "createdAt": "2021-09-21T10:04:07.755000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 75706661bcda41da95180bfba7d99a20)."
+                },
+                {
+                    "id": "8018b0c7-6996-4463-9bbd-76dd904c724d",
+                    "createdAt": "2021-09-21T09:48:46.241000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "8e035a55-0882-41ee-89da-f9401a35f3e7",
+                    "createdAt": "2021-09-21T09:48:16.971000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 91919219e8e946119ca676619d618556)."
+                },
+                {
+                    "id": "ac5e38b4-3b4d-41b7-93e8-ef184af0491e",
+                    "createdAt": "2021-09-21T09:32:59.516000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "99605216-3297-459d-a064-c0ca44e6127c",
+                    "createdAt": "2021-09-21T09:32:30.727000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 11fe72210dea4838a943a619d93d4f91)."
+                },
+                {
+                    "id": "1fa04c39-8307-4ca1-9d05-71ca6e63cbd1",
+                    "createdAt": "2021-09-21T09:17:23.432000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "7e92dce5-ab19-4223-98ce-4bddf35542b5",
+                    "createdAt": "2021-09-21T09:16:55.574000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 6358779526ee4c648b65e55e3c54dfff)."
+                },
+                {
+                    "id": "ec77514c-850f-48a0-80fa-74f276ce5469",
+                    "createdAt": "2021-09-21T09:01:31.222000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "29ca9257-7f0d-40aa-b149-d87b75d59e92",
+                    "createdAt": "2021-09-21T09:01:03.428000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 2628e2e883b54dc09e0541f8caeecb97)."
+                },
+                {
+                    "id": "7fbcc755-a590-4ba6-a4c5-cfe9d15a042e",
+                    "createdAt": "2021-09-21T08:45:44.001000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "a37e5e66-4465-4220-b724-ecf57c5d1f8c",
+                    "createdAt": "2021-09-21T08:45:13.708000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 2553d6b255db44a29eb785a76cfc4fd6)."
+                },
+                {
+                    "id": "15a53227-e9e0-4de8-aaca-2311c9ff2498",
+                    "createdAt": "2021-09-21T08:29:51.800000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "b5f4386e-68a9-4876-aeca-d3fdcab86f9e",
+                    "createdAt": "2021-09-21T08:29:22.089000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task d1d4bebc061144e6b3ff8fc4186404fa)."
+                },
+                {
+                    "id": "a20da445-3089-4f2a-89c8-5cb4697e4b67",
+                    "createdAt": "2021-09-21T08:13:54.554000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "1b9b9391-13f0-4ed8-8738-877aed4517d5",
+                    "createdAt": "2021-09-21T08:13:25.849000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 6ffacf92e7d1457eb7d2d1a68ee90833)."
+                },
+                {
+                    "id": "15f7af43-830f-45a9-9936-bb5325e2432d",
+                    "createdAt": "2021-09-21T07:58:00.422000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "a6d73bb6-8ce9-4649-b617-e6946a63d5d6",
+                    "createdAt": "2021-09-21T07:57:31.238000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task f3b58de85e844179a7bde12ba9f6ac3a)."
+                },
+                {
+                    "id": "c4ab7cdf-2261-4412-af21-a29d12fa11ac",
+                    "createdAt": "2021-09-21T07:41:52.200000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5c6678e0-a503-4cbb-ad08-623624ca8dc6",
+                    "createdAt": "2021-09-21T07:41:33.084000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 644e00b009b64e4085f0de6603ab225d)."
+                },
+                {
+                    "id": "2fc63692-a19f-49d8-8193-7983dce29d85",
+                    "createdAt": "2021-09-21T07:26:13.152000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "2f39b950-18fb-4016-9434-845fe68d0512",
+                    "createdAt": "2021-09-21T07:25:53.772000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 8d70baeaefbc48b3a44c2b1cb9d34fdf)."
+                },
+                {
+                    "id": "05ca3f9b-a33b-498f-8d9a-12fde3163afe",
+                    "createdAt": "2021-09-21T07:10:25.881000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "539bd438-0536-4723-b3da-c2c90a995b6a",
+                    "createdAt": "2021-09-21T07:09:57.730000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 6f9783444a3b4bbdb8f4b0c172929b49)."
+                },
+                {
+                    "id": "3b0b4d28-3030-41c8-9419-77fb3dc98b46",
+                    "createdAt": "2021-09-21T06:54:32.817000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "769cf262-9e08-4787-8fe3-331db603cbef",
+                    "createdAt": "2021-09-21T06:54:03.810000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task ecc4b356134344cf9a2c2bcd07dddcf6)."
+                },
+                {
+                    "id": "e66a5f36-730a-40a4-ad07-01b03ee0c6cc",
+                    "createdAt": "2021-09-21T06:38:45.713000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "da02174d-f9e8-423f-b816-2c924bb3e8da",
+                    "createdAt": "2021-09-21T06:38:16.434000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task aa60f92f0b6c4db98a4401954d0d3e4f)."
+                },
+                {
+                    "id": "1d534ce4-bc6e-4faa-b69f-c12e41b73cb8",
+                    "createdAt": "2021-09-21T06:22:56.483000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "4829d733-ef52-49f3-be3b-2cf519ddaa60",
+                    "createdAt": "2021-09-21T06:22:27.060000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 84a9346453654fbfa82f3031a4a2df96)."
+                },
+                {
+                    "id": "97a7e271-5edc-4796-8a32-3fcafbb78698",
+                    "createdAt": "2021-09-21T06:07:04.704000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "4c0a5f2a-97e0-4134-8915-69ab38ff6823",
+                    "createdAt": "2021-09-21T06:06:36.026000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 189c4b7ee60d41b1831da77163ee4109)."
+                },
+                {
+                    "id": "2d1eed06-b1fc-47de-a92e-a0d6aff01bdb",
+                    "createdAt": "2021-09-21T05:51:22.521000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "6f484c1c-4c8e-43b5-a859-292a57cbebce",
+                    "createdAt": "2021-09-21T05:50:52.744000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 11c11cb1971d416baec51f77716da141)."
+                },
+                {
+                    "id": "5a5a78fb-f9e0-411e-9180-a9d264bcc003",
+                    "createdAt": "2021-09-21T05:35:36.858000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "c618fb8f-cc00-4f70-966d-6b85da5ba644",
+                    "createdAt": "2021-09-21T05:35:07.211000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task e099ef4ae43a4b299e8c5c740261f662)."
+                },
+                {
+                    "id": "f2aa5200-6515-4bbd-a5e4-6db4a3bbbcfd",
+                    "createdAt": "2021-09-21T05:19:52.617000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "009e6405-088d-4942-aec4-186221897df4",
+                    "createdAt": "2021-09-21T05:19:33.305000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 2f0486da653542dca37e1b32ec744eb6)."
+                },
+                {
+                    "id": "fff866fc-c2e7-492e-afe2-4f81c8a10bfb",
+                    "createdAt": "2021-09-21T05:04:13.830000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5a4021ce-d36a-4eea-b094-72b3960a7a02",
+                    "createdAt": "2021-09-21T05:03:53.427000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task f01aa775b23b44eb97e267a077839d1b)."
+                },
+                {
+                    "id": "52cf03df-116d-4582-8821-737c74f83fb5",
+                    "createdAt": "2021-09-21T04:48:28.107000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "961919e7-3abf-40af-b018-40c98fdcf924",
+                    "createdAt": "2021-09-21T04:48:08.684000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 1192b7afdf474ac1a03e15bba79c7686)."
+                },
+                {
+                    "id": "630b1722-8973-428d-ac4e-8c2c0ab0c2e8",
+                    "createdAt": "2021-09-21T04:32:39.912000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "d56b3837-4f89-4e36-8901-54b734c86b8b",
+                    "createdAt": "2021-09-21T04:32:20.464000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 66d387ca39d24a87aaaeb08c0c15af38)."
+                },
+                {
+                    "id": "db388707-7e81-4f8c-bb7b-db955f9c479d",
+                    "createdAt": "2021-09-21T04:16:53.407000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "2e95da44-93e5-4e68-9bae-a3f05247fa06",
+                    "createdAt": "2021-09-21T04:16:23.613000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 58aa8015043c42a6871096946ea3a7b2)."
+                },
+                {
+                    "id": "91642239-d772-4a64-9fc1-e57d12570426",
+                    "createdAt": "2021-09-21T04:01:02.116000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "5cfb665c-1205-4c29-b9b5-fef22bdab03d",
+                    "createdAt": "2021-09-21T04:00:43.020000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task 145b4351aca6429795d456a41486cdbd)."
+                },
+                {
+                    "id": "f0522820-9d85-499e-9040-9d7fe9fe40a0",
+                    "createdAt": "2021-09-21T03:45:27.231000-05:00",
+                    "message": "(service dianademo-multi-service) has reached a steady state."
+                },
+                {
+                    "id": "7bcf6590-0f79-4190-8892-bba925312d89",
+                    "createdAt": "2021-09-21T03:45:07.722000-05:00",
+                    "message": "(service dianademo-multi-service) has started 1 tasks: (task df3f4affb90348fb8681ac23acd5ab91)."
+                }
+            ],
+            "createdAt": "2021-09-18T13:42:05.662000-05:00",
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0e9ee9e68b696cd87"
+                    ],
+                    "securityGroups": [
+                        "sg-0ef05399277d4814f"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "schedulingStrategy": "REPLICA",
+            "createdBy": "arn:aws:iam::000000000000:role/lacework-cs1-admin-role",
+            "enableECSManagedTags": true,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false
+        }
+    ],
+    "failures": []
+}

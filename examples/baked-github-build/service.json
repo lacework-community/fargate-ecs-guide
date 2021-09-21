@@ -1,0 +1,87 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:us-east-2:000000000000:service/dianademo-cluster/dianademo-baked",
+            "serviceName": "dianademo-baked",
+            "clusterArn": "arn:aws:ecs:us-east-2:000000000000:cluster/dianademo-cluster",
+            "loadBalancers": [],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "taskDefinition": "arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-baked:3",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": false,
+                    "rollback": false
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/6928886692332846711",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-baked:3",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2021-09-18T13:58:50.455000-05:00",
+                    "updatedAt": "2021-09-21T16:32:18.438000-05:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0e9ee9e68b696cd87"
+                            ],
+                            "securityGroups": [
+                                "sg-0ef05399277d4814f"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/6928886692332846711 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::000000000000:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "2dada9e8-fffc-41a5-8a89-c57bdbef2790",
+                    "createdAt": "2021-09-21T16:32:18.444000-05:00",
+                    "message": "(service dianademo-baked) has reached a steady state."
+                },
+                {
+                    "id": "2cffee70-9fe6-4181-a644-d51cf468ba9d",
+                    "createdAt": "2021-09-21T16:31:50.418000-05:00",
+                    "message": "(service dianademo-baked) has started 1 tasks: (task 6510aff5c9c3448ca0a35f921287bd4f)."
+                }
+            ],
+            "createdAt": "2021-08-25T10:45:52.807000-05:00",
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0e9ee9e68b696cd87"
+                    ],
+                    "securityGroups": [
+                        "sg-0ef05399277d4814f"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "schedulingStrategy": "REPLICA",
+            "createdBy": "arn:aws:iam::000000000000:role/lacework-cs1-admin-role",
+            "enableECSManagedTags": true,
+            "propagateTags": "TASK_DEFINITION",
+            "enableExecuteCommand": false
+        }
+    ],
+    "failures": []
+}

@@ -104,7 +104,7 @@ The next step is to either create a service or simply run the task. Below we cre
 open https://us-east-2.console.aws.amazon.com/ecs/home?region=us-east-2#/clusters/dianademo-cluster/createService 
 
 ## OR provide json definition of the service
-aws ecs create-service --cli-input-json file://bakedService.json   
+aws ecs create-service --cli-input-json file://service.json   
 
 # View Service
 aws ecs list-services --cluster dianademo-cluster 
