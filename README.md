@@ -48,7 +48,7 @@ Two options are available when installing the LW Agent in AWS Fargate. Both are 
 
 ## Installation Steps 
 
-Two major options to install the LW Agent in AWS Fargate are available. The *preferred* method is to backe the LW Agent directly in the Docker Image. We encourgae the use of multi stage builds but a verion sans multi-stage builds is also documented below:
+Two major options to install the LW Agent in AWS Fargate are available. The *preferred* method is to bake the LW Agent directly in the Docker Image. We encourgae the use of multi stage builds but a verion sans multi-stage builds is also documented below:
 
 ***TO VIEW THE INSTALLATION STEPS, NAVIGATE TO THE CORRESPOINDING CONFIGURATION FROM BELOW***
 
