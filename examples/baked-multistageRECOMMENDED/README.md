@@ -71,8 +71,8 @@ Notes:
 
 Now that the image is modified, you can upload the changes to ECR by:
 
-* 3a. Rebuilding the image
-* 3b. Pushing the changes to AWS ECR
+#### 3a. Rebuilding the image
+#### 3b. Pushing the changes to AWS ECR
 
 #### Example (with BuildKit)
 
