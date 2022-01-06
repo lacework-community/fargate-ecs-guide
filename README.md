@@ -43,7 +43,7 @@ Two options are available to install the Lacework agent in AWS Fargate. We highl
 
 ## Installation steps 
 
-Two primary options to install the Lacework Agent in AWS Fargate are available. The *preferred* method is to bake the Lacework agent directly in the Docker image. We encourage using multistage builds; however, a version without multistage builds is also documented below:
+Two primary options to install the Lacework Agent in AWS Fargate are available. The *recommended* method is to bake the Lacework agent directly in the Docker image. We encourage using multistage builds; however, a version without multistage builds is also documented below:
 
 Navigate to the corresponding configuration below to view the installation steps. 
 
