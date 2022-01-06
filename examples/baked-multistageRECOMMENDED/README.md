@@ -1,25 +1,24 @@
 
 # Bake the Lacework Agent in the Docker Image Using Multistage Builds (preferred method) 
 
-There are a few options to bake the Lacework agent. Downloading the agent at run time will result in a longer startup time than installing and preconfiguring it in the image. 
+There are several options to bake the Lacework agent. Downloading the agent at run time will result in a longer startup time than installing and preconfiguring it in the image. 
 
-**Therefore, we recommend directly installing the Lacework agent in your existing Docker image via multistage builds as shown below.**
+## Best practices
+
+We recommend directly installing the Lacework agent in your existing Docker image via multistage builds as shown below.
 
 ## Installation steps 
 
-### 1. Review [best practices](../../README.md#best-practices) and [prerequisites](../../README.md#prerequisites)
+### 1. Review [best practices](../../README.md#best-practices) and [prerequisites](../../README.md#prerequisites).
 
-### 2. Add the agent to your existing Dockerfile
+### 2. Add the agent to your existing Dockerfile.
 
 Modify your existing Dockerfile in to add the Lacework agent by following these steps: 
 
-#### 2a. Add a build stage
-#### 2b. Copy the binary
-#### 2c. Set up configurations
-
-In the docker-entrypoint script, add a line to: 
-
-#### 2d. Run the agent 
+#### 2a. Add a build stage.
+#### 2b. Copy the binary.
+#### 2c. Set up configurations.
+#### 2d. In the docker-entrypoint script, add a line to run the agent. 
 
 #### Example (with BuildKit)
 
@@ -67,12 +66,12 @@ Notes:
 * It’s also possible to install the Lacework agent by fetching and installing the binaries from our official Github repository. Steps for this approach are found in the [GitHub build example](../baked-github-build/README.md).
 * Optionally, some customers choose to upload the `lacework/datacollector:latest` to their ECR. 
 
-### 3. [Build](build-multi.sh) and [push](push-multi.sh)
+### 3. [Build](build-multi.sh) and [push](push-multi.sh).
 
-Now that the image is modified, you can upload the changes to ECR by:
+Now that the image is modified, follow these steps to upload the changes to ECR:
 
-#### 3a. Rebuilding the image
-#### 3b. Pushing the changes to AWS ECR
+#### 3a. Rebuild the image.
+#### 3b. Push the changes to AWS ECR.
 
 #### Example (with BuildKit)
 
@@ -95,7 +94,7 @@ Now that the image is modified, you can upload the changes to ECR by:
   docker push "${AWS_ECR_URI}/${AWS_ECR_NAME}:latest-baked"
   ```
 
-### 4. Run 
+### 4. Run the container.
 
 Now you have finished making custom changes to add the Lacework agent. This step involves running the container as you typically would. 
 
