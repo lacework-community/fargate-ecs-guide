@@ -13,13 +13,13 @@ There are a few options to bake the Lacework agent. Downloading the agent at run
 
 Modify your existing Dockerfile in to add the Lacework agent by following these steps: 
 
-* 2a. Add a build stage
-* 2b. Copy the binary
-* 2c. Set up configurations
+#### 2a. Add a build stage
+#### 2b. Copy the binary
+#### 2c. Set up configurations
 
 In the docker-entrypoint script, add a line to: 
 
-* 2d. Run the agent 
+#### 2d. Run the agent 
 
 #### Example (with BuildKit)
 
