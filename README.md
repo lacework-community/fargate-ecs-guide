@@ -14,7 +14,7 @@
 | **Date**  | **Author** | **Comment** | 
 | ------------- | ------------- | ------------- |
 | January 2022  | Allie Fick  | Revised to align with Lacework's best practice guide template.  |
-| September 2021  |  Diana Esteves  | <ul><li>We're embracing Docker's multi-stage build feature when baking the agent.</li><li>Updated best practices to include 1 agent token:1 service recommendation</li><li>Updated one-liner and corresponding entrypoint to start the agent service.</li><li>Updated sidecar reqs.</li><li>We now have several example Dockerfiles and helper scripts. :star_struck: See [/examples](/examples).</li></ul> |
+| September 2021  |  Diana Esteves  | <ul><li>We're embracing Docker's multistage build feature when baking the agent.</li><li>Updated best practices to include 1 agent token:1 service recommendation</li><li>Updated one-liner and corresponding entrypoint to start the agent service.</li><li>Updated sidecar reqs.</li><li>We now have several example Dockerfiles and helper scripts. :star_struck: See [/examples](/examples).</li></ul> |
 | August 2021  | Diana Esteves  |  Initial public release for this guide. Thank you to all the amazing Lacers who provided valuable feedback! |
 
 
@@ -34,7 +34,7 @@ Two options are available to install the Lacework agent in AWS Fargate. We highl
 ## Best practices
 
 * Install the agent _directly_ into your existing application Dockerfile(s):
-    * Use [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds).
+    * Use [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds).
     * When building the Docker image, place the Lacework agent token in the container definition as an environment variable to securely pass it in. 
 * Allocate 512 MB vCPU and 1 GB RAM for the Lacework agent.
 * Use one Lacework agent token per _container_ (`TaskDefinition` Service).
