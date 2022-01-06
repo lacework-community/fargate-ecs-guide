@@ -12,10 +12,10 @@ The command in step 2 may be appended to an existing `RUN` command via `&&`’s.
 
 ## Installation steps 
 
-### 1. Review [best practices](../../README.md#best-practices) and [general requirements](../../README.md#requirements)
+### 1. Review [best practices](../../README.md#best-practices) and [general requirements](../../README.md#requirements).
 
 
-### 2. Copy one-liner and edit entrypoint script
+### 2. Copy one-liner and edit entrypoint script.
 
 #### One-liner RUN command (with BuildKit)
 
@@ -49,7 +49,7 @@ COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
 ##
-## add the above one-liner RUN command to bake in the Lacework agent here:) 
+## add the above one-liner RUN command to bake in the Lacework agent here:
 ##
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
@@ -68,26 +68,26 @@ curl -s  https://stream.wikimedia.org/v2/stream/recentchange |   grep data |  se
 ```
 
 
-### 3. [Build](build-baked.sh) and [push](push-baked.sh)
+### 3. [Build](build-baked.sh) and [push](push-baked.sh).
 
 ```bash
-# Set variables for ECR
+# Set variables for ECR.
 export AWS_ECR_REGION="us-east-2"
 export AWS_ECR_URI="000000000000.dkr.ecr.us-east-2.amazonaws.com"
 export AWS_ECR_NAME="dianademo"
 
-# Store the Lacework agent token in a file (See Requirements to obtain  a token)
+# Store the Lacework agent token in a file (See Requirements to obtain  a token).
 echo "ae83fc1d3f79f8f84b3512688b5b6b98f33f6688fa4c67931afae9a6" > token.key
 
-# Build and tag the image
+# Build and tag the image.
 DOCKER_BUILDKIT=1 docker build --secret id=LW_AGENT_ACCESS_TOKEN,src=token.key --force-rm=true --tag "${AWS_ECR_URI}/${AWS_ECR_NAME}:latest-baked" .
 
-# Log in to ECR and push the image
+# Log in to ECR and push the image.
 aws ecr get-login-password --region ${AWS_ECR_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_URI}
 docker push "${AWS_ECR_URI}/${AWS_ECR_NAME}:latest-baked"
 ```
 
-### 4. Run the image  
+### 4. Run the image.  
 
 To run the image, AWS requires the configuration of an ECS [Task Definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html). A very simple example is [here](taskDefinition.json). For more examples, visit the [AWS documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html).
 
@@ -95,20 +95,20 @@ To run the image, AWS requires the configuration of an ECS [Task Definition](htt
 # Create a cluster. You only need to do this once.
 aws ecs create-cluster --cluster-name dianademo-cluster 
 
-# Register the task definition
+# Register the task definition.
 aws ecs register-task-definition --cli-input-json file://taskDefinition.json   
 ```
 
 Next, either create a service or run the task. 
 
 ```bash
-# Create a service (or run task) through the AWS web console 
-## Follow the AWS Wizard
+# Create a service (or run task) through the AWS web console.
+## Follow the AWS Wizard.
 open https://us-east-2.console.aws.amazon.com/ecs/home?region=us-east-2#/clusters/dianademo-cluster/createService 
 
-## OR provide json definition of the service
+## OR provide json definition of the service.
 aws ecs create-service --cli-input-json file://service.json   
 
-# View Service
+# View service.
 aws ecs list-services --cluster dianademo-cluster 
 ```
