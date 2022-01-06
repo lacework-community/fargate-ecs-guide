@@ -49,7 +49,7 @@ Navigate to the corresponding configuration below to view the installation steps
 
 - ***Recommended***: [Bake the Lacework Agent in the Docker Image Using Multistage Builds](examples/baked-multistageRECOMMENDED/README.md)
 - [Bake the Lacework Agent into Existing Dockerfile Sans Multistage Build](examples/baked-github-build/README.md)
-- [Using a Sidecar](examples/sidecar/README.md)
+- [Use a Sidecar](examples/sidecar/README.md)
 
 ## Provide feedback
 
