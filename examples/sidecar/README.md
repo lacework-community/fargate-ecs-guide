@@ -3,7 +3,7 @@
 While the [baked option](../baked-multistageRECOMMENDED/README.md) is **preferred**, a sidecar alternative is possible with additional effort.  
 ## Best practices
 
-With this approach, the original application images stay in tact; therefore, users should modify the `TaskDefinition` to interpolate the Lacework agent and Lacework agent token. This is achieved by using a sidecar containing the Lacework agent script and adding an environment variable for the token. In addition, you should prepend the existing entrypoint/command with shell script to launch the Lacework agent. See below for reference examples.
+With this approach, the original application images stay in tact; therefore, users should modify the `TaskDefinition` to interpolate the Lacework agent and Lacework agent token. This is achieved by using a sidecar containing the Lacework agent script and adding an environment variable for the token. In addition, you should prepend the existing entrypoint/command with shell script to launch the Lacework agent.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ With this approach, the original application images stay in tact; therefore, use
 
 ## Installation steps 
 
-### 1. Review [best practices](../../README.md#best-practices) and [general requirements](../../README.md#requirements).
+### 1. Review [best practices](../../README.md#best-practices) and [prerequisites](../../README.md#prerequisites).
 
 ### 2. Upload image(s) to AWS ECR. 
 
@@ -86,8 +86,6 @@ docker push "${AWS_ECR_URI}/${AWS_ECR_NAME}:latest-sidecar"
 This step adds details from the sidecar and main application containers. A full [TaskDefinition](taskDefinition.json) is necessary for this step; however, the extracted, relevant configurations are below. Please ensure anything in **bold** matches on your end.
 
 See Lacework's [docs](https://support.lacework.com/hc/en-us/articles/360055567574#sidecar-based-deployment) for screenshots.
-
-### 5a. Register the task definition
 
 ```bash
 # Register the task definition
@@ -168,11 +166,11 @@ Once the task is created, you can either run it or creare a service around it. T
 
 ### AWS examples
 
-- [taskDefinition.json](taskDefinition.json) Obtained via:
+- [taskDefinition.json](taskDefinition.json); obtained via:
 ```bash
 aws ecs describe-task-definition --task-definition arn:aws:ecs:us-east-2:000000000000:task-definition/dianademo-sidecar:1 > ~/lw/agent/fargate/fargate-ecs-guide/examples/sidecar/taskDefinition.json
 ```
-- [service.json](service.json) Obtained via:
+- [service.json](service.json); obtained via:
 ```bash
 aws ecs describe-services --services arn:aws:ecs:us-east-2:000000000000:service/dianademo-cluster/dianademo-sidecar --cluster dianademo-cluster  > ~/lw/agent/fargate/fargate-ecs-guide/examples/sidecar/service.json
 ```
