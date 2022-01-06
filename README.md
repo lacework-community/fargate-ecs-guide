@@ -26,10 +26,10 @@ Two options are available to install the Lacework agent in AWS Fargate. We highl
 
 * The base image in your Dockerfile must be based on one of the Linux distros found [here](https://support.lacework.com/hc/en-us/articles/360005230014). 
 * As the Lacework agent user gathers network packet data, it needs to be run with <code>sudo</code></strong> privileges. The Lacework agent must be run as <strong><code>root</code></strong>. 
-* The user must have valid access token(s) for the Lacework agent. These can be obtained via the [Lacework CLI](https://github.com/lacework/go-sdk/wiki/CLI-Documentation#agent-access-token-management) (see [Installing the CLI & Creating a Token](/examples/cliToken.sh) bash script for a simple example) or, alternatively, head over to <code>[https://](https://YOUR-ORG.lacework.net/ui/investigation/settings)<strong><span style="text-decoration:underline;">YOUR-ORG[.lacework.net/ui/investigation/settings](https://YOUR-ORG.lacework.net/ui/investigation/settings)</span></strong>  </code>.
+* The user must have valid access token(s) for the Lacework agent. These can be obtained via the [Lacework CLI](https://github.com/lacework/go-sdk/wiki/CLI-Documentation#agent-access-token-management) (see [Installing the CLI & Creating a Token](/examples/cliToken.sh) bash script for a simple example) or, alternatively, navigate to <code>[https://](https://YOUR-ORG.lacework.net/ui/investigation/settings)<strong><span style="text-decoration:underline;">YOUR-ORG[.lacework.net/ui/investigation/settings](https://YOUR-ORG.lacework.net/ui/investigation/settings)</span></strong>  </code>.
 * The AWS Identity and Access Management (IAM) user used needs permissions listed in [AmazonECSTaskExecutionRolePolicy](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy$jsonEditor).
-* Lacework agent needs to reach Lacework’s API endpoint. The default endpoint is [https://api.lacework.net](https://api.lacework.net). See [other endpoints here](https://support.lacework.com/hc/en-us/articles/1500007918841-Agent-Server-URL).
-* If leveraging the sidecar alternative, be sure to review [additional requirements](/examples/sidecar/README.md#additional-requirements).
+* The Lacework agent needs to reach Lacework’s API endpoint. The default endpoint is [https://api.lacework.net](https://api.lacework.net). See [other endpoints here](https://support.lacework.com/hc/en-us/articles/1500007918841-Agent-Server-URL).
+* If leveraging the sidecar alternative, review [additional requirements](/examples/sidecar/README.md#additional-requirements).
 
 ## Best practices
 
