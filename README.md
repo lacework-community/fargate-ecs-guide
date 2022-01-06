@@ -13,7 +13,7 @@
 
 | **Date**  | **Author** | **Comment** | 
 | ------------- | ------------- | ------------- |
-| January 2022  | Allie Fick  | Revised to align with Lacework's best practice guide template.  |
+| January 2022  | Allie Fick  | <ul><li>Revised to align with Lacework's best practice guide template.</li><li>Completed editorial review.</li></ul>  |
 | September 2021  |  Diana Esteves  | <ul><li>We're embracing Docker's multistage build feature when baking the agent.</li><li>Updated best practices to include 1 agent token:1 service recommendation</li><li>Updated one-liner and corresponding entrypoint to start the agent service.</li><li>Updated sidecar reqs.</li><li>We now have several example Dockerfiles and helper scripts. :star_struck: See [/examples](/examples).</li></ul> |
 | August 2021  | Diana Esteves  |  Initial public release for this guide. Thank you to all the amazing Lacers who provided valuable feedback! |
 
