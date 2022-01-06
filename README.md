@@ -1,7 +1,7 @@
 
 # Lacework Agent + AWS Fargate Guide <!-- omit in toc -->
 
-### Table of Contents
+### Table of contents
 - [Change log](#change-log)
 - [Overview](#overview)
 - [Best practices](#best-practices)
